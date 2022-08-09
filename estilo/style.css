@@ -49,13 +49,21 @@ section.sclean {
     background-attachment: scroll;
 }
 
+section#joaninha {
+    background-image: url('imagens/background1.jpg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/*
 section.backp {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.87), rgba(0, 0, 0, 0.801));
     width: 45%;
     padding: 7px;
     color: white;
 }
-
+*/
 
 
 
