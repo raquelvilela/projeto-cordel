@@ -4,13 +4,20 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
 
+:root {  /* geralmente 2 ou 3 fontes de configuracao */
+    --font1: Verdana, Geneva, Tahoma, sans-serif;
+    --fonte2: 'Passion One', cursive; /* titulo */
+    --fonte3: 'Sriracha', cursive;
+}
+
 * {
     margin: 0px;
     padding: 0px;
-    
 }
-body {
-    font-family: 'Sriracha', cursive;
+
+html, body {
+    min-height: 100vh; /* colocar 100% da altura min da view altura do site */
+    font-family: var(--font1);
     background-color: white;
     color: black;
 }
@@ -21,25 +28,46 @@ header {
     color: white;
     padding: 55px;
     font-weight: normal;
+    text-align: center;
 }
 header h1 {
-    
-    text-align: center;
-    font-size: 9em;
+    /* text-transform: uppercase;  -->  joga todas as letras pra maiuscula  */
+    font-family: var(--fonte2);
+    font-size: 10vw; /* baseado na largura da tela - recurso mas n melhor maneira */
+    font-variant: small-caps; /* letras maiusculas mas as primeiras sao maiores */
     font-weight: bold;
 }
 header p {
-    text-align: center;
+    padding-bottom: 50;
     font-size: 1.3em;
     font-weight: normal;
+    color: white;
+}
+header > p > a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    
+}
+header a:hover, footer a:hover {
+    text-decoration: underline;
 }
 
 section {
+    font-family: var(--fonte3);
     text-align: left;
      color: white;
-     margin: 55px 20px;
-     font-size: 3.2em;
-     padding: 20px;
+     font-size: 3.1vw;
+     /* separação entre as sections */
+     padding-top: 10vh;
+     padding-bottom: 10vh;
+
+     line-height: 2em; /* espaçamento entre as linhas */
+     padding-left: 30px; /* da um espaço do lado esquerdo */
+}
+
+section > p {
+    padding-bottom: 2em;
 }
 
 section.sclean {
@@ -50,31 +78,41 @@ section.sclean {
     background-attachment: scroll;
 }
 
+section.img {
+    background-color: rgb(41, 41, 41);
+    color: white;
+    margin: 0px;
+    display: flex;
+    background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.462);
+    
+}
+
+section.img p {
+    background-color: rgba(0, 0, 0, 0.582);
+    /* width: 650px;  /* largura fixa da caixa do paragrafo */
+    display: inline-block; /* caixa que se adapta ao tamanho do conteudo */
+    text-shadow: 1px 1px 0px black
+    
+}
+
 #joaninha {
     background-image: url('../imagens/background01.jpg');
     background-repeat: no-repeat;
     background-position: right center;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100vh;
+
 }
 
 #livro {
     background-image: url('../imagens/background02.jpg');
     background-repeat: no-repeat;
     background-position: right center;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100vh;
+
 }
 
-.backp p {
-    color: white;
-    margin: 0px;
-    display: flex;
-    
-}
-.backp p {
+
+.img p {
     background-image: linear-gradient(to right, rgba(0,rgba(0, 0, 0, 0.829), 0.911), black);
     width: 45%;
     padding: 7px;
@@ -97,8 +135,4 @@ footer p > a {
     font-weight: bold;
     text-decoration: none;
     transition: 0.3s;
-}
-footer p > a:hover {
-    text-decoration: none;
-    background-color: rgb(80, 80, 80);
 }
